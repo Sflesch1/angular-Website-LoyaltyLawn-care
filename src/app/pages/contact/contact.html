@@ -1,0 +1,134 @@
+<div id="contact-page">
+  <nav class="navbar custom-navbar sticky-top">
+    <div class="container justify-content-center">
+      <ul class="nav justify-content-between custom-w-66 custom-nav-links">
+        <li class="nav-item text-end custom-w-33">
+          <a class="nav-link" routerLink="/services">Services</a>
+        </li>
+        <li class="nav-item text-center custom-w-33">
+          <a class="nav-link" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item text-start custom-w-33">
+          <a class="nav-link" routerLink="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid py-5">
+    <div class="row align-items-start">
+      <div class="col-md-3 text-center mb-4 mb-md-0">
+        <a routerLink="/">
+          <img
+            src="Images/logo.jpg"
+            alt="Loyalty Lawncare Logo"
+            class="brand-logo"
+          />
+        </a>
+      </div>
+
+      <div class="col-md-9">
+        <h1 class="section-heading mb-4">Contact Us</h1>
+        <p>
+          We're here to help. Whether you need a quote, want to schedule
+          service, or have a question about your lawn — get in touch!
+        </p>
+
+        <ul class="list-unstyled mt-3">
+          <li class="mb-2">
+            <i class="bi bi-envelope-fill me-1"></i> Email:
+            <a href="mailto:info@loyaltylawncare.com" class="contact-link">
+              info@loyaltylawncare.com
+            </a>
+          </li>
+          <li>
+            <i class="bi bi-telephone-fill me-1"></i> Phone:
+            <a href="tel:615-586-2055" class="contact-link"> (615) 586-2055 </a>
+          </li>
+        </ul>
+
+        <section class="review-form mt-5">
+          <h2>Leave a Review</h2>
+          <form
+            *ngIf="!success"
+            (ngSubmit)="submitReview()"
+            #reviewForm="ngForm"
+          >
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-control"
+                required
+                [(ngModel)]="review.name"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Review</label>
+              <textarea
+                id="message"
+                name="message"
+                class="form-control"
+                rows="3"
+                required
+                [(ngModel)]="review.message"
+              ></textarea>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Stars</label>
+              <div class="star-rating" style="font-size: 2rem; cursor: pointer">
+                <ng-container *ngFor="let s of [1, 2, 3, 4, 5]">
+                  <i
+                    class="bi"
+                    [ngClass]="
+                      (review.stars ?? 0) >= s
+                        ? 'bi-star-fill text-warning'
+                        : 'bi-star'
+                    "
+                    (click)="setStars(s)"
+                    (mouseenter)="hoverStars = s"
+                    (mouseleave)="hoverStars = 0"
+                    [class.text-secondary]="!review.stars || review.stars < s"
+                    [ngClass]="{
+                      'bi-star-fill': (hoverStars || review.stars || 0) >= s,
+                      'bi-star': (hoverStars || review.stars || 0) < s,
+                      'text-warning': (hoverStars || review.stars || 0) >= s,
+                      'text-secondary': (hoverStars || review.stars || 0) < s
+                    }"
+                  ></i>
+                </ng-container>
+              </div>
+              <input
+                type="hidden"
+                name="stars"
+                [(ngModel)]="review.stars"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <div *ngIf="success" class="text-center">
+            <img
+              src="Images/thankyou.png"
+              alt="Thank you for your review!"
+              style="max-width: 300px"
+            />
+            <h3>Thank you for your review!</h3>
+          </div>
+        </section>
+
+        <a routerLink="/" class="btn btn-outline-secondary mt-4">
+          <i class="bi bi-arrow-left"></i> Back to Home
+        </a>
+      </div>
+    </div>
+    <!-- CLOSE .row -->
+  </div>
+  <!-- CLOSE .container-fluid -->
+
+  <footer class="custom-footer">
+    <p>&copy; 2025 Loyalty Lawncare. All rights reserved.</p>
+  </footer>
+</div>

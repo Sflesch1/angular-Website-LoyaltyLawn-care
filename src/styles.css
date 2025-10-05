@@ -1,1 +1,135 @@
-/* You can add global styles to this file, and also import other style files */
+/* ========================= */
+/* === GLOBAL VARIABLES  === */
+/* ========================= */
+:root {
+  --brand-red: #c72c28;
+  --brand-white: #ffffff;
+  --brand-gray: #302f2f;
+  --brand-dark-gray: #646262;
+  --brand-black: #000000;
+  --brand-green: #302f2f;
+  --brand-heading: #4d4949;
+  --brand-shadow: #1e1e1e;
+  --font-header: 3rem;
+  --font-subheader: 1.5rem;
+}
+
+/* ========================= */
+/* === HEADER SECTION     === */
+/* ========================= */
+.custom-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url(/Images/grass.png);
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  padding: 40px;
+  height: 75vh;
+  overflow: hidden;
+}
+.header-left {
+  text-align: left;
+}
+.brand-logo {
+  max-width: 47%;
+  height: auto;
+}
+.brand-title {
+  color: var(--brand-red);
+  font-size: var(--font-header);
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  text-shadow:
+    -2px -2px 0 var(--brand-shadow),
+     2px -2px 0 var(--brand-shadow),
+    -2px  2px 0 var(--brand-shadow),
+     2px  2px 0 var(--brand-shadow),
+    -1px -1px 0 var(--brand-shadow),
+     1px -1px 0 var(--brand-shadow),
+    -1px  1px 0 var(--brand-shadow),
+     1px  1px 0 var(--brand-shadow),
+     2px  2px 4px rgba(0, 0, 0, 0.6);
+}
+.brand-tagline {
+  color: var(--brand-shadow);
+  font-size: h2;
+  font-weight: 600;
+  margin-top: 10px;
+  text-shadow: 0 1px 1px rgb(54, 52, 52);
+}
+
+/* ========================= */
+/* === NAVBAR SECTION     === */
+/* ========================= */
+.custom-navbar {
+  background-color: var(--brand-gray);
+  padding: 0.75rem 0;
+}
+.custom-navbar .nav-link,
+.custom-navbar .navbar-brand {
+  color: var(--brand-white);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.custom-navbar .nav-link:hover {
+  color: var(--brand-red);
+}
+.custom-nav-links {
+  margin: 0;
+  padding: 0;
+}
+.custom-w-66 {
+  width: 66.66%;
+}
+.custom-w-33 {
+  width: 33.33%;
+}
+
+
+/* ========================= */
+/* === TESTIMONIALS       === */
+/* ========================= */
+#testimonial-rotator {
+  position: relative;
+  min-height: 80px;
+}
+#testimonial-text, #testimonial-author {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.3s ease, transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+#testimonial-rotator.show #testimonial-text,
+#testimonial-rotator.show #testimonial-author {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* ========================= */
+/* === FOOTER SECTION     === */
+/* ========================= */
+.custom-footer {
+  background-color: var(--brand-gray);
+  color: var(--brand-white);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+/* ========================= */
+/* === CONTACT SECTION     === */
+/* ========================= */
+#contact.section-title {
+  color: #fff;
+}
+#contact .contact-link {
+  color: #fff;
+  transition: color 0.2s ease;
+}
+#contact .contact-link:hover {
+  color: #c72c28;
+}

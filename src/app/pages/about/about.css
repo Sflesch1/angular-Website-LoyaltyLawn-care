@@ -1,0 +1,18 @@
+
+/* ========================= */
+/* === ABOUT SECTION      === */
+/* ========================= */
+.custom-about {
+  background-color: var(--brand-dark-gray);
+  color: var(--brand-white);
+  padding: 3rem 1rem;
+}
+.about-image {
+  width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+/* Override for About section title color */
+#about .section-title {
+  color: #fff;
+}

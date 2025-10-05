@@ -1,0 +1,118 @@
+<nav class="navbar custom-navbar sticky-top">
+  <div class="container justify-content-center">
+    <ul class="nav justify-content-between custom-w-66 custom-nav-links">
+      <li class="nav-item text-end custom-w-33">
+        <a class="nav-link" routerLink="/services">Services</a>
+      </li>
+      <li class="nav-item text-center custom-w-33">
+        <a class="nav-link" routerLink="/about">About</a>
+      </li>
+      <li class="nav-item text-start custom-w-33">
+        <a class="nav-link" routerLink="/contact">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<header class="custom-header">
+  <div class="header-left">
+    <img
+      src="/Images/logo.jpg"
+      alt="Loyalty Lawncare Logo"
+      class="brand-logo mb-2"
+    />
+    <h1 class="brand-title">Loyalty Lawncare</h1>
+    <h2 class="brand-tagline">Professional Lawn & Outdoor Services</h2>
+  </div>
+</header>
+
+<section class="custom-section text-center" id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <i class="bi bi-tree custom-icon"></i>
+      <h5>Mowing</h5>
+    </div>
+    <div class="col-md-4 mb-3">
+      <i class="bi bi-scissors custom-icon"></i>
+      <h5>Trimming</h5>
+    </div>
+    <div class="col-md-4 mb-3">
+      <i class="bi bi-droplet custom-icon"></i>
+      <h5>Gutter Cleaning</h5>
+    </div>
+    <div class="col-md-4 mb-3">
+      <i class="bi bi-cloud-drizzle custom-icon"></i>
+      <h5>Driveway Pressure Washing</h5>
+    </div>
+    <div class="col-md-4 mb-3">
+      <i class="bi bi-flower1 custom-icon"></i>
+      <h5>Weeding & Mulching</h5>
+    </div>
+    <div class="col-md-4 mb-3">
+      <i class="bi bi-trash custom-icon"></i>
+      <h5>Waste & Leaf Removal</h5>
+    </div>
+  </div>
+</section>
+
+<section class="custom-about text-center" id="about">
+  <div class="container">
+    <h2 class="section-title">About Loyalty Lawncare</h2>
+    <p>
+      We take pride in delivering reliable, affordable, and top-quality lawncare
+      and outdoor maintenance services to our local community. Whether it’s
+      weekly mowing or seasonal cleanup, Loyalty Lawncare is here for you.
+    </p>
+  </div>
+</section>
+
+<section class="custom-section text-center" id="testimonials">
+  <h2 class="section-title">Testimonials</h2>
+  <div id="testimonial-rotator" class="testimonial-rotator-container show">
+    <div
+      *ngIf="displayTestimonial"
+      [ngClass]="{
+        'slide-in-left': animationState === 'enter',
+        'slide-out-right': animationState === 'leave',
+        'testimonial-anim': true
+      }"
+      class="testimonial-content"
+    >
+      <p id="testimonial-text" class="fs-4 mb-1">
+        "{{ displayTestimonial.Message }}"
+      </p>
+      <p id="testimonial-author" class="fw-bold mb-0">
+        - {{ displayTestimonial.Name }}
+      </p>
+      <div>
+        <ng-container *ngFor="let s of [1, 2, 3, 4, 5]">
+          <i
+            class="bi"
+            [ngClass]="
+              s <= displayTestimonial.Stars
+                ? 'bi-star-fill text-warning'
+                : 'bi-star text-secondary'
+            "
+          ></i>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <hr style="border-top: 2px solid var(--brand-gray); margin: 2rem 0 0 0" />
+</section>
+
+<section class="custom-about text-center" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p>
+    Email:
+    <a href="mailto:info@loyaltylawncare.com" class="contact-link"
+      >info@loyaltylawncare.com</a
+    >
+  </p>
+  <p>Phone: <a href="tel:5551234567" class="contact-link">(555) 123-4567</a></p>
+</section>
+
+<footer class="custom-footer">
+  <p>&copy; 2025 Loyalty Lawncare. All rights reserved.</p>
+</footer>

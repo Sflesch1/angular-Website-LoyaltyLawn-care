@@ -1,0 +1,13 @@
+
+/* ========================= */
+/* === CONTACT SECTION    === */
+/* ========================= */
+#contact .section-title {
+  color: #fff;
+}
+#contact-page .contact-link {
+  color: var(--brand-dark-gray) !important;
+}
+#contact-page .contact-link:hover {
+  color: var(--brand-red) !important;
+}
