@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   firebase: {
     apiKey: "AIzaSyB9vLTf7HP0GoP7KOkIyZ-6kz6PFuTW3Ws",
     authDomain: "backend-for-loyalty-lawncare.firebaseapp.com",
